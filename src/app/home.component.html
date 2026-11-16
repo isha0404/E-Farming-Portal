@@ -1,0 +1,97 @@
+<!-- NAVBAR (visible only after login) -->
+<nav class="navbar" *ngIf="isLoggedIn">
+
+  <div class="logo">
+    🌱 E-Farming
+  </div>
+
+  <div class="menu">
+    <a routerLink="/">Home</a>
+    <a routerLink="/marketplace">Marketplace</a>
+    <a routerLink="/elearning">E-Learning</a>
+    <a routerLink="/govt">Government Schemes</a>
+  </div>
+
+  <button class="logout-btn" (click)="logout()">Logout</button>
+
+</nav>
+
+
+<!-- HERO SECTION -->
+<section class="hero">
+
+  <div class="overlay"></div>
+
+  <div class="hero-content">
+
+    <span class="badge">Empowering Farmers Digitally</span>
+
+    <h1>
+      Sell Directly.
+      <span class="highlight">Earn Fairly.</span>
+    </h1>
+
+    <p>
+      Connect with buyers, access government schemes, and learn modern
+      farming techniques — all in one platform built for you.
+    </p>
+
+
+    <!-- BEFORE LOGIN -->
+    <div class="buttons" *ngIf="!isLoggedIn">
+
+      <a routerLink="/register" class="btn primary">
+        Get Started →
+      </a>
+
+      <a routerLink="/login" class="btn secondary">
+        Login
+      </a>
+
+    </div>
+
+
+    <!-- AFTER LOGIN -->
+    <div *ngIf="isLoggedIn" class="welcome-box">
+
+      <h2>🌱 Welcome to the E-Farming Portal</h2>
+
+      <p>
+        This platform helps farmers sell crops directly to buyers,
+        learn modern farming techniques through E-Learning modules,
+        and stay updated with Government schemes.
+      </p>
+
+      <div class="dashboard-buttons buttons">
+
+        <a routerLink="/marketplace" class="btn primary">
+          Go to Marketplace
+        </a>
+
+        <a routerLink="/elearning" class="btn secondary">
+          Start Learning
+        </a>
+
+        <a routerLink="/govt" class="btn secondary">
+          View Government Schemes
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- FEATURES -->
+    <div class="features">
+
+      <span>✔ No Middlemen</span>
+
+      <span>✔ Fair Prices</span>
+
+      <span>✔ Verified Buyers</span>
+
+    </div>
+
+  </div>
+
+</section>
